@@ -14,4 +14,5 @@ wk.register({
 
 wk.register({
     ['e'] = {'<cmd>NvimTreeToggle<cr>','Explorer'},
+    ['q'] = {'<cmd>qall<cr>','quit nvim'}
 }, { prefix = "<leader>" })

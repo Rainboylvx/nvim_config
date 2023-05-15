@@ -68,8 +68,15 @@ require("lazy").setup({
 
             -- set termguicolors to enable highlight groups
             vim.opt.termguicolors = true
+            vim.keymap.set('n','<F2>',':NvimTreeToggle<cr>')
+            require("plugins.nvim-tree")
+        end,
+    },
 
-            require("plugins/nvim-tree")
+    {
+        "akinsho/bufferline.nvim",
+        config = function()
+            require("bufferline").setup{}
         end,
     },
 
@@ -80,11 +87,21 @@ require("lazy").setup({
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-cmdline",
             "uga-rosa/cmp-dictionary",
+            "hrsh7th/cmp-nvim-lsp",
+            "onsails/lspkind-nvim"
         },
         config = function() 
             require("plugins/cmp")
         end,
     },
+
+    {
+        "/neovim/nvim-lspconfig",
+        config = function()
+            require("lspconfig").pyright.setup{}
+            require("lspconfig").clangd.setup{}
+        end,
+    }
 })
 
 require("configs") -- 加载自己的配置
