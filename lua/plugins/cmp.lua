@@ -94,10 +94,13 @@ dict.setup({
   debug = false,
 })
 
+
+-- nvim cmp dictionary --
 vim.o.spelllang = "en"
+local word_path = vim.fn.stdpath("config") .. "/dictionary/google-10000-english-no-swears.txt"
 dict.switcher({
   spelllang = {
-    en = "/home/nec/.config/nvim/google-10000-english-no-swears.txt",
+    en = word_path
   },
 })
 
