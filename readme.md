@@ -7,7 +7,18 @@
 - archLinux
 - nvim >= 0.8
 
-[[TOC]]
+Table of Contents
+=================
+
+* [nvim_config](#nvim_config)
+   * [1.准备](#1准备)
+      * [1.1 在archlinux系统下安装相关的软件](#11-在archlinux系统下安装相关的软件)
+   * [2. 安装 lazy.nvim](#2-安装-lazynvim)
+   * [使用的插件](#使用的插件)
+      * [nvim-treesitter](#nvim-treesitter)
+      * [<a href="https://github.com/nvim-tree/nvim-tree.lua">nvim-tree</a>](#nvim-tree)
+      * [nvim dap](#nvim-dap)
+      * [which key](#which-key)
 
 ## 1.准备
 
@@ -160,7 +171,7 @@ faq
 如何自动编译文件，自动lunach文件，自行停止在main，
 自动读取in文件
 
-## which key
+### which key
 
 我们使用[which-key.nvim](https://github.com/folke/which-key.nvim)作为nvim快速键的管理工具
 
@@ -188,3 +199,4 @@ vim.o.timeoutlen = 300
     -- spelling
     "z=",
 ```
+
