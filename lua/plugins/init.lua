@@ -1,0 +1,7 @@
+require("plugins/lazy")
+require("plugins/which_key")
+require("plugins/nvim_dap")
+require("plugins/nvim_dap_ui")
+require("plugins/nvim-treesitter")
+require("plugins/nvim-tree")
+require("plugins/cmp")
