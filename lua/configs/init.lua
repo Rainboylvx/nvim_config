@@ -1,8 +1,5 @@
 
 local set = vim.opt
--- 设置颜色方案
-vim.o.backgroud = "dark"
-vim.cmd([[colorscheme gruvbox]])
 
 set.number = true
 set.relativenumber = true
