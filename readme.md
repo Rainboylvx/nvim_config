@@ -47,16 +47,21 @@ git config --global url."https://ghproxy.net/https://github".insteadOf "https://
 
 在`~/.config/nvim`下的目录
 
-```
+```plaintext
 .
+├── dictionary
+│   └── google-10000-english-no-swears.txt
+├── ftplugin
+│   └── haskell.lua
 ├── init.lua
-└── lua
-    ├── configs
-    │   ├── init.lua
-    │   └── keymaps.lua
-    └── plugins
-        ├── init.lua
-        └── lazy.lua
+├── lazy-lock.json
+├── lua
+│   ├── cmp
+│   ├── configs
+│   ├── dap
+│   ├── lsp
+│   └── plugins
+└── readme.md
 ```
 
 ## 2. 安装 lazy.nvim 
