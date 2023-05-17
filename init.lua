@@ -101,6 +101,22 @@ require("lazy").setup({
             require("lspconfig").pyright.setup{}
             require("lspconfig").clangd.setup{}
         end,
+    },
+    {
+        'mrcjkb/haskell-tools.nvim',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope.nvim', -- optional
+        },
+        branch = '1.x.x', -- recommended
+    },
+    {
+        "voldikss/vim-translator",
+        config = function()
+            vim.g.translator_target_lang = "zh"
+            vim.g.translator_default_engines = {"bing","youdao"}
+        end,
+        
     }
 })
 

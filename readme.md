@@ -200,4 +200,32 @@ vim.o.timeoutlen = 300
     "z=",
 ```
 
+### haskell
+
+如何设置haskell的相关ide设置
+
+需要的插件
+
+```
+- nvim-lsconfig
+- haskell-tools.nvim
+
+sudo pacman -S ghc haskell-language-server
+```
+
+在启动的时候会出现这个错误
+
+```
+haskell-tools cloud not determine buffer the name of buffer 1
+```
+或者
+
+```
+File type not one of {"haskell","lhaskell","cabal"} 
+```
+
+
+### vim-translator
+
+翻译软件
 

@@ -1,10 +1,5 @@
 local wk = require("which-key")
-
-wk.register({
-  f = {
-    name = "file", -- optional group name
-    n = { "New File" }, -- just a label. don't create any mapping
-    e = "Edit File", -- same as above
+wk.register({ f = { name = "file", -- optional group name n = { "New File" }, -- just a label. don't create any mapping e = "Edit File", -- same as above
     ["1"] = "which_key_ignore",  -- special label to hide it in the popup
     b = { function() print("bar") end, "Foobar" } -- you can also pass functions!
   },
@@ -16,3 +11,11 @@ wk.register({
     ['e'] = {'<cmd>NvimTreeToggle<cr>','Explorer'},
     ['q'] = {'<cmd>qall<cr>','quit nvim'}
 }, { prefix = "<leader>" })
+
+-- translator
+wk.register({
+    t = {
+        name="translator",
+        w = {"<cmd>TranslateW<cr>","TranslateW"}
+    }
+},{prefix = "<leader>"})
