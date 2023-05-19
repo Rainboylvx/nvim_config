@@ -3,6 +3,11 @@ local cmp = require'cmp'
 
 local lspkind = require('lspkind')
 
+local icons = {
+    dictionary = "📚"
+}
+
+
 cmp.setup({
 
     formatting = {
@@ -15,6 +20,8 @@ cmp.setup({
             -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
             before = function (entry, vim_item)
                 -- ...
+                local source  =  entry.source.name --> nvim-lsp ,vnsip
+                vim_item.menu = "[" .. (icons[source] or "?").. "]"
                 return vim_item
             end
         })
@@ -114,7 +121,7 @@ dict.setup({
 
 -- nvim cmp dictionary --
 vim.o.spelllang = "en"
-local word_path = vim.fn.stdpath("config") .. "/plugins/cmp/dictionary/google-10000-english-no-swears.txt"
+local word_path = vim.fn.stdpath("config") .. "/lua/plugins/cmp/dictionary/google-10000-english-no-swears.txt"
 dict.switcher({
   spelllang = {
     en = word_path
