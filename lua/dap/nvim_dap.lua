@@ -1,40 +1,24 @@
+-- 设置 自动读取 in 文件
+-- 设置 手动设置 in 文件的名字
 local dap = require('dap')
-dap.adapters.cppdbg = {
-  id = 'cppdbg',
-  type = 'executable',
-  command = '/home/nec/.bin/cpptools/extension/debugAdapters/bin/OpenDebugAD7',
-}
 
-dap.configurations.cpp = {
-  {
-    name = "Launch file",
-    type = "cppdbg",
-    request = "launch",
-    program = function()
-      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-    end,
-    cwd = '${workspaceFolder}',
-    stopAtEntry = true,
-  },
-  {
-    name = 'Attach to gdbserver :1234',
-    type = 'cppdbg',
-    request = 'launch',
-    MIMode = 'gdb',
-    miDebuggerServerAddress = 'localhost:1234',
-    miDebuggerPath = '/usr/bin/gdb',
-    cwd = '${workspaceFolder}',
-    program = function()
-      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-    end,
-  },
-}
+require("dap.lang.cpp")
 
+
+-- keymaps
+
+-- compile
+-- start debug
 vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
-vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)
-vim.keymap.set('n', '<F11>', function() require('dap').step_into() end)
-vim.keymap.set('n', '<F12>', function() require('dap').step_out() end)
+-- step over
+vim.keymap.set('n', '<F6>', function() require('dap').step_over() end)
+-- step into
+vim.keymap.set('n', '<F7>', function() require('dap').step_into() end)
+-- step out
+vim.keymap.set('n', '<F8>', function() require('dap').step_out() end)
+-- toggle breakpoint
 vim.keymap.set('n', '<Leader>b', function() require('dap').toggle_breakpoint() end)
+-- set breakpoint
 vim.keymap.set('n', '<Leader>B', function() require('dap').set_breakpoint() end)
 vim.keymap.set('n', '<Leader>lp', function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
 vim.keymap.set('n', '<Leader>dr', function() require('dap').repl.open() end)
