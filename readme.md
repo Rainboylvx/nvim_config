@@ -150,8 +150,7 @@ require("configs/keymaps")
 
 配置
 
-```lua
-```
+keymap: <kbd>F2</kbd>
 
 ### nvim dap
 
@@ -208,26 +207,18 @@ vim.o.timeoutlen = 300
 
 需要的插件
 
-```
 - nvim-lsconfig
 - haskell-tools.nvim
 
-sudo pacman -S ghc haskell-language-server
-```
+不要忘记安装haskell
 
-在启动的时候会出现这个错误
-
+```sh
+sudo pacman -S ghc ghc-static haskell-language-server
 ```
-haskell-tools cloud not determine buffer the name of buffer 1
-```
-或者
-
-```
-File type not one of {"haskell","lhaskell","cabal"} 
-```
-
 
 ### vim-translator
 
 翻译软件
+
+keymap: `leader`<kbd>t</kbd>
 
